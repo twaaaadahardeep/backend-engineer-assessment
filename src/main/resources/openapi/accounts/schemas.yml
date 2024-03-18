@@ -39,24 +39,53 @@ components:
           type: string
           description: "Email of user"
           example: "john@doe.com"
+        providerId:
+          type: string
+          description: "Provider ID"
+          example: "cus_PkNKAtqBgEuZhf"
+        providerType:
+            type: string
+            description: "Provider Type"
+            example: "stripe"
         createdAt:
           type: string
           format: date-time
           description: "Prospect creation time"
           readOnly: true
-          example: "2022-04-13T01:52:40.690387Z"
+          example: "2024-03-16T13:57:11.384341+05:30"
         updatedAt:
           type: string
           format: date-time
           description: "Prospect last updated time"
           readOnly: true
-          example: "2022-04-13T01:52:40.690387Z"
+          example: "2024-03-16T13:57:11.384341+05:30"
       example:
         - id: usr_fba5b240-0e68-4e64-aca6-f12022dc4be3
           firstName: "John"
           lastName: "Doe"
-          creationAt: "2022-04-13T01:52:40.690387Z"
-          updatedAt: "2022-04-13T01:52:40.690387Z"
+          providerId: "cus_PkNKAtqBgEuZhf"
+          providerType: "stripe"
+          creationAt: "2024-03-16T13:57:11.384341+05:30"
+          updatedAt: "2024-03-16T13:57:11.384341+05:30"
+    updateAccount:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: "User's updated first name"
+          example: "John"
+        lastName:
+          type: string
+          description: "User's updated last name"
+          example: "Guy"
+        email:
+          type: string
+          description: "User's updated email"
+          example: "john@guy.com"
+      example:
+        - firstName: "John"
+          lastName: "Guy"
+          email: "john@guy.com"
 
     accounts:
       type: array
