@@ -102,6 +102,9 @@ To bring the containers down, run:
 docker-compose down
 ```
 
+## Link to Explanation Video:
+[Explanation Video](https://drive.google.com/file/d/1GqT1O4v7WaCf77jpSVAMfmAy47WFKH1a/view?usp=sharing)
+
 
 ## Guides
 
