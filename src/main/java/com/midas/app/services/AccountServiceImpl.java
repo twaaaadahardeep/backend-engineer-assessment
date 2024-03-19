@@ -23,8 +23,7 @@ import org.springframework.util.StringUtils;
 public class AccountServiceImpl implements AccountService {
   private final Logger logger = Workflow.getLogger(AccountServiceImpl.class);
 
-  @Autowired
-  private WorkflowService workflowService;
+  @Autowired private WorkflowService workflowService;
 
   private final AccountRepository accountRepository;
 
@@ -61,6 +60,13 @@ public class AccountServiceImpl implements AccountService {
     return accountRepository.findAll();
   }
 
+  /**
+   * updateAccount updates an account in the system or provider.
+   *
+   * @param accountId the provider ID for the customer.
+   * @param updateAccountDto details of the customer to be updated.
+   * @return Account
+   */
   @Override
   public Account updateAccount(String accountId, UpdateAccountDto updateAccountDto) {
     Optional<Account> existingAccountOptional =

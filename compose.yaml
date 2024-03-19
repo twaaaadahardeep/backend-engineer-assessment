@@ -10,19 +10,22 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - postgres_data:/var/lib/postgres
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - local_network
 
   myapp:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     image: myapp:staging
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/mydatabase
       - SPRING_DATASOURCE_USERNAME=myuser
       - SPRING_DATASOURCE_PASSWORD=secret
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_HIBERNATE_DDL=update
+      - SPRING_TEMPORAL_CONNECTION_TARGET=temporal:7233
     ports:
       - 8080:8080
     depends_on:

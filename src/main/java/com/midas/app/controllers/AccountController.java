@@ -67,8 +67,7 @@ public class AccountController implements AccountsApi {
    * @return Updated account details (status code 200)
    */
   @Override
-  public ResponseEntity<AccountDto> updateUserAccount(
-      String accountId, UpdateAccountDto updateAccountDto) {
+  public ResponseEntity<AccountDto> updateUserAccount(String accountId, UpdateAccountDto updateAccountDto) {
     logger.info("Updating account with ID: {}", accountId);
 
     Account updatedAccount = accountService.updateAccount(accountId, updateAccountDto);

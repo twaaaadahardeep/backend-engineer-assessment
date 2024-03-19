@@ -86,6 +86,23 @@ To format the code, use the following command
 ./gradlew spotlessApply
 ```
 
+### The Updated Application is completely dockerised
+To run the containers, first build the image (staging) for Spring Boot Application.
+```sh 
+docker build -t myapp:staging .
+```
+
+Then get the containers up by running:
+```sh
+docker-compose up -d
+```
+
+To bring the containers down, run:
+```sh
+docker-compose down
+```
+
+
 ## Guides
 
 The following guides illustrate how to use some features concretely:

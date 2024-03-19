@@ -93,6 +93,9 @@ public class StripePaymentProvider implements PaymentProvider {
     return null;
   }
 
+  /**
+   * Setting API Key for Stripe for the current method.
+   */
   private void setAPIKey() {
     Stripe.apiKey = configuration.getApiKey();
   }

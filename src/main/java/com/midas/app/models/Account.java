@@ -38,6 +38,7 @@ public class Account {
   @UpdateTimestamp
   private OffsetDateTime updatedAt;
 
+  // Added 2 new columns to support Stripe Integration.
   @Column(name = "provider_type")
   @Enumerated(EnumType.STRING)
   private PaymentProviderType providerType;

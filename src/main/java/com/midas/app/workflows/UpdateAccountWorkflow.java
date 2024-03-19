@@ -8,6 +8,12 @@ import io.temporal.workflow.WorkflowMethod;
 public interface UpdateAccountWorkflow {
   String QUEUE_NAME = "update-account-workflow";
 
+  /**
+   * updateAccount updates an account in the system or provider.
+   *
+   * @param details is the details of the account to be updated.
+   * @return Account
+   */
   @WorkflowMethod
   Account updateAccount(Account details);
 }

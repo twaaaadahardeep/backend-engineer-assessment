@@ -20,5 +20,12 @@ public interface AccountService {
    */
   List<Account> getAccounts();
 
+  /**
+   * updateAccount updates an account in the system or provider.
+   *
+   * @param id the provider ID for the customer.
+   * @param updateAccountDto details of the customer to be updated.
+   * @return Account
+   */
   Account updateAccount(String id, UpdateAccountDto updateAccountDto);
 }
